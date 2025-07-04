@@ -17,9 +17,9 @@ public class Main {
         //SolucionBacktraking
         Solucion_Backtraking back = new Solucion_Backtraking();
         ArrayList <Maquina> resultadoBack = back.getSecuenciaMaquinas(maquinas, piezasNecesarias);
-        System.out.println("Backtracking:");
+        System.out.println("-Backtracking-");
         imprimirResultado(resultadoBack);
-        if(resultadoBack !=null) {
+        if(resultadoBack != null) {
         	System.out.println("Estados generados: " + back.getEstadosGenerados());
 
         }
@@ -27,23 +27,23 @@ public class Main {
         //Solucion Greedy
         Solucion_Greedy greedy = new Solucion_Greedy();
         ArrayList <Maquina> resultadoGreedy = greedy.getSecuenciaMaquinas(maquinas, piezasNecesarias);
-        System.out.println("Greedy:");
+        System.out.println();
+        System.out.println("-Greedy-");
         imprimirResultado(resultadoGreedy);
         if (resultadoGreedy != null) {
         	System.out.println("Candidatos considerados: " + greedy.getCandidatosConsiderados());
         }
-        
     }
     
     private static void imprimirResultado(ArrayList<Maquina> resultado) {
     	  if (resultado == null || resultado.isEmpty()) {
     	        System.out.println("sin solucion");
     	        return;
-    	    }
+          }
     	  else {
     		  System.out.print("Secuencia: ");
     	        for (Maquina maquina : resultado) {
-    	            System.out.print(maquina.getNombre() + " " + maquina.getPiezas() + "- " );
+    	            System.out.print("[" + maquina.getNombre() + ", " + maquina.getPiezas() + "] " );
     	        }
     	        System.out.println();
 
@@ -53,9 +53,6 @@ public class Main {
     	        }
     	        System.out.println("Piezas producidas: " + totalPiezas);
     	        System.out.println("Puestas en funcionamiento: " + resultado.size());
-    	    }
-    	  }
-        
-
-
+          }
+    }
 }
