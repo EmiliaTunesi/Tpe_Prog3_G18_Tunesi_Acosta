@@ -24,7 +24,7 @@ public class Solucion_Backtraking {
         estadosGenerados++;
 
         if (produccion_actual == produccion) { //estado final
-            if (secuencia_maquinas == null || secuencia_actual.size() < secuencia_maquinas.size()) {
+            if ((secuencia_maquinas == null) || (secuencia_actual.size() < secuencia_maquinas.size())) {
                 secuencia_maquinas = new ArrayList<>(secuencia_actual);
             }
             return;
@@ -34,7 +34,7 @@ public class Solucion_Backtraking {
             Maquina m = maquinas.get(i);
             secuencia_actual.add(m);
             getSecuenciaMaquinas(maquinas, produccion, produccion_actual + m.getPiezas(), i); //ramifica en profundidad
-            secuencia_actual.remove(secuencia_actual.size() - 1);
+            secuencia_actual.removeLast();
         }
     }
 

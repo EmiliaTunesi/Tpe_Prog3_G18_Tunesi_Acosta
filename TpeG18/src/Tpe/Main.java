@@ -38,7 +38,6 @@ public class Main {
     private static void imprimirResultado(ArrayList<Maquina> resultado) {
     	  if (resultado == null || resultado.isEmpty()) {
     	        System.out.println("sin solucion");
-    	        return;
           }
     	  else {
     		  System.out.print("Secuencia: ");
